@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use paras, please cite it as below."
+title: "paras: put any software into your language, and prove it still works"
+version: 2026.10.0
+date-released: 2026-10-21
+license: MIT
+authors:
+  - family-names: Choudhary
+    given-names: Abhishek
+    affiliation: AyeAI
+    orcid: "https://orcid.org/0009-0002-0684-8320"
+repository-code: "https://github.com/hmnsq/paras"
