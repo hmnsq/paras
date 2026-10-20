@@ -1,0 +1,32 @@
+{
+  "title": "paras: put any software into your language, and prove it still works",
+  "version": "2026.10.0",
+  "doi": null,
+  "license": "MIT",
+  "artifacts": [
+    {
+      "name": "paras-2026.10.0.tar.gz",
+      "size": 27620,
+      "sha256": "25ff26687d11b70b05308ec1ead303097c450ff66c0ac68087d42fa6eb2f6d8d"
+    },
+    {
+      "name": "CITATION.cff",
+      "size": 396,
+      "sha256": "713cad092331c384f850e66be7ff4021e5e4e6e6bba2ec7ee15b22bd4a14b54f"
+    }
+  ],
+  "metadata_files": [
+    "metadata.json",
+    "zenodo.json",
+    "datacite.json",
+    "codemeta.json",
+    "CITATION.cff"
+  ],
+  "reproducibility": {
+    "checksums": {
+      "paras-2026.10.0.tar.gz": "25ff26687d11b70b05308ec1ead303097c450ff66c0ac68087d42fa6eb2f6d8d",
+      "CITATION.cff": "713cad092331c384f850e66be7ff4021e5e4e6e6bba2ec7ee15b22bd4a14b54f"
+    },
+    "tool": "misty-doi"
+  }
+}

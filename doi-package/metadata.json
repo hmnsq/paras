@@ -1,0 +1,29 @@
+{
+  "title": "paras: put any software into your language, and prove it still works",
+  "version": "2026.10.0",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "language": "eng",
+  "description": "paras points at any Git repository and puts it into any of Hindawi's languages: keywords, numerals and names through a dictionary. It checks the result converts back to the original byte for byte, lowers it through the original Hindawi pipeline, builds and runs it, and compares its output with the English build; what is not yet translated is reported with an issue to file. It carries a layered stack from the SHAKTI SDK, firmware and operating systems to toolchains and AI frameworks, publishes each language as a branch of a fork, and runs in a container. Verified so far: SHAKTI bare metal and xv6 from Urdu, Tamil and Hindi on QEMU; xv6 and darknet from Urdu converting back byte for byte and printing what English prints. The rest is defined and marked as not yet run.",
+  "creators": [
+    {
+      "name": "Choudhary, Abhishek",
+      "affiliation": "AyeAI",
+      "orcid": "0009-0002-0684-8320"
+    }
+  ],
+  "keywords": [
+    "Hindawi",
+    "paras",
+    "Parashakti",
+    "sovereign software stack",
+    "programming in native languages",
+    "source ingestion",
+    "SHAKTI",
+    "RISC-V",
+    "QEMU",
+    "reproducibility"
+  ],
+  "repository": "https://github.com/hmnsq/paras"
+}
