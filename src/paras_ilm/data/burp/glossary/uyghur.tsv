@@ -1,0 +1,41 @@
+# uyghur: names and comments for the language pages; proposed words, for review by its speakers
+binary	ئىككىلىك
+search	ئىزدەش
+binary search	ئىككىلىك ئىزدەش
+search tree	ئىزدەش دەرىخى
+tree node	دەرەخ تۈگۈنى
+count	سانى
+divisor	بۆلگۈچ
+expr	ئىپادە
+high	يۇقىرى
+inorder	ئوتتۇرا تەرتىپ
+input	كىرگۈزۈش
+insert	قىستۇرۇش
+items	بۇيۇملار
+key	ئاچقۇچ
+keys	ئاچقۇچلار
+left	سول
+line	قۇر
+lines	قۇرلار
+low	تۆۋەن
+middle	ئوتتۇرا
+msg	ئۇچۇر
+node	تۈگۈن
+num	رەقەم
+number	سان
+pop	چىقىرىش
+prime	ئاددىي سان
+push	ئىتتىرىش
+root	يىلتىز
+stack	دۆۋە
+symbol	بەلگە
+top	چوققا
+tree	دەرەخ
+value	قىممەت
+values	قىممەتلەر
+words	سۆزلەر
+binary search in a sorted array	 رەتلەنگەن تىزمىدا ئىككىلىك ئىزدەش 
+a binary search tree class, in C++	 ئىككىلىك ئىزدەش دەرىخى سىنىپى، سى++ دا 
+a stack class, in Java	 دۆۋە سىنىپى، جاۋادا 
+binary search, in Python	 ئىككىلىك ئىزدەش، پايسوندا 
+right	ئوڭ

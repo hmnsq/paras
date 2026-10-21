@@ -1,0 +1,41 @@
+# nepali: names and comments for the language pages; proposed words, for review by its speakers
+binary	द्विआधारी
+search	खोज
+binary search	द्विआधारी खोज
+search tree	खोज रूख
+tree node	रूख गाँठो
+count	गन्ती
+divisor	भाजक
+expr	अभिव्यक्ति
+high	माथिल्लो
+inorder	मध्यक्रम
+input	आगत
+insert	घुसाउ
+items	वस्तुहरू
+key	साँचो
+keys	साँचोहरू
+left	बायाँ
+line	पङ्क्ति
+lines	पङ्क्तिहरू
+low	तल्लो
+middle	बीच
+msg	सन्देश
+node	गाँठो
+num	अङ्क
+number	सङ्ख्या
+pop	झिक
+prime	अविभाज्य
+push	थप
+root	जरा
+stack	थाक
+symbol	चिह्न
+top	शीर्ष
+tree	रूख
+value	मान
+values	मानहरू
+words	शब्दहरू
+binary search in a sorted array	 क्रमबद्ध सूचीमा द्विआधारी खोज 
+a binary search tree class, in C++	 द्विआधारी खोज रूखको वर्ग, सी++ मा 
+a stack class, in Java	 थाकको वर्ग, जाभामा 
+binary search, in Python	 द्विआधारी खोज, पाइथनमा 
+right	दायाँ

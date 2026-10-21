@@ -1,0 +1,43 @@
+# Names and comments of the shaili samples, for BURP's dictionary. Drafted with an AI translator (Claude) as BURP's
+# translators are meant to be used, and recorded here so every ingestion is the same and reverses exactly.
+# Proposed words, unreviewed: corrections are welcome as issues. English and the word, separated by a tab.
+binary	نبيو
+search	نيما
+values	درجوجي
+count	كدي
+key	مبودي
+keys	مبوداي
+low	كس
+high	سم
+middle	ڟكيا
+tree	بشيا
+node	كلي
+left	هغو
+right	دام
+root	سيو
+insert	سك
+inorder	بس_ڟر
+print	بغ
+stack	تر
+items	ابوبو
+top	كولي
+push	تور
+value	درج
+pop	چرو
+args	حجوجي
+words	كلموم
+lines	ليوك
+input	شغرو
+line	لي
+expr	فرچ
+num	لمب
+msg	سكو
+number	لمب
+prime	فرك
+divisor	مي_ربو
+symbol	علام
+binary search in a sorted array	نيمان نبيو
+a binary search tree class, in c++	نيمان نبيو بشيا، سي++
+binary search, in python	نيمان نبيو، ڤايثون
+a stack class, in java	تر، جاوا
+primes below 30, in basic	لمبوبي فرك، بيسك

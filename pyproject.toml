@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paras-ilm"
+version = "2026.10.1"
+description = "Put any software into your language, and prove it still works: ingestion with BURP into every Hindawi language, one branch per language."
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Abhishek Choudhary", email = "obonac@users.noreply.github.com"}]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["Hindawi", "Project ILM", "localisation", "programming in native languages", "sovereign software stack", "BURP"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: POSIX :: Linux",
+               "Environment :: Console :: Curses", "Topic :: Software Development :: Compilers", "Natural Language :: Hindi", "Natural Language :: Urdu"]
+
+[project.urls]
+Homepage = "https://github.com/hmnsq/paras"
+Hindawi = "https://github.com/hindawiai/hindawi2026.10"
+
+[project.scripts]
+paras = "paras_ilm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+paras_ilm = ["data/*", "data/**/*"]

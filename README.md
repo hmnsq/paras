@@ -1,53 +1,41 @@
 # paras
 
-**Put any software into your language, and prove it still works.**
-Paras on SHAKTI is Parashakti: the whole sovereign stack, from the chip to AI, IoT and robotics.
+**Put any software into your language, and prove it still works.** Paras on SHAKTI is Parashakti: the sovereign stack,
+from silicon to distribution, in every language Hindawi supports.
 
 ```
-git clone https://github.com/hmnsq/paras && cd paras
-./paras --ingest https://github.com/OWNER/REPO
+pipx install paras-ilm                 # or, without installing anything: git clone https://github.com/hmnsq/paras && cd paras && ./paras
+paras ingest https://github.com/OWNER/REPO
+paras top                              # watch it, in the manner of htop
 ```
-
-That is all. Paras builds its container the first time (you see every step), takes the repository, puts it into every
-language Hindawi is ready for, checks that each version converts back to the original byte for byte, builds it through
-the original Hindawi pipeline, runs it, compares what it prints with the English build, and writes `paras-work/REPORT.md`.
-
-## The three things it does
 
 | Command | What happens |
 |---|---|
-| `paras --ingest <repository>` | ingest, check, build, run, compare, report |
-| `paras --report <repository>` | ingest and check only; the report lists the words still to be translated, with an issue ready to file |
-| `paras --stack` | the whole sovereign stack, layer by layer: each upstream forked into hmnsq, each language on its own branch, published |
+| `paras ingest <repository>` | BURP puts it into every supported language; each converts back to the original byte for byte, or it is not published; one branch per language |
+| `paras report <repository>` | ingest and check only; GAPS.md says what is still to be translated |
+| `paras stack` | the whole sovereign stack, layer by layer, silicon to distribution (`paras list`) |
+| `paras top` | every core's load, the stack's progress, and each language's quality as BURP measures it; pause, move to other cores |
 
-`<repository>` is any Git URL (GitHub, GitLab, Bitbucket, your own server) or a folder on your machine.
+`<repository>` is any Git URL or a folder. Options: `--langs urdu,tamil`, `--publish [ORG]` (default hmnsq, asks once),
+`--only`, `--from`, `--cpus 0-5`, `--local` (no container), `--work DIR` (default `./paras-work`).
 
-## Options, when you need them
+Everything runs inside one Docker container that paras makes once and keeps; nothing is installed on your machine and
+nothing asks for sudo. Your GitHub login is handed into the container only when you publish, and you are asked once.
 
-| Option | Meaning |
-|---|---|
-| `--langs urdu,tamil` | only these languages (`paras --languages` lists them) |
-| `--publish [ORG]` | publish each language as a branch of a fork in ORG (default hmnsq) |
-| `--build CMD`, `--run CMD`, `--expect TEXT` | how to build and run it and what it must print, if paras cannot find out itself |
-| `--list` | the stack, layer by layer |
-| `--status`, `--stop` | where a run is, or stop it; running again carries on from where it stopped |
-| `--shell` | a shell inside the container |
-| `--local` | run without a container (where Docker is not available, as on Colab) |
+## How it is held to account
 
-What it needs: Docker, and for publishing a GitHub login (`gh auth login`); your login is handed into the container.
-Nothing is installed on your machine and nothing asks for sudo. Your intention is asked for once per run, never per step.
-
-## What is shown, and what is not yet
+- A language is published only if it converts back to the original exactly; after a push, the remote is read back and must
+  hold exactly the commits pushed.
+- Every step is shown as it runs and recorded in `paras-work/events.jsonl`; every failure is recorded with its cause, and one
+  package failing never stops the rest. State is written atomically; one run per work folder; a rerun carries on.
+- The disk is checked before each package; every command has a time limit; the manifest is validated before anything runs.
+- `ops/verify.sh` runs the tests, end to end included; nothing is released unless they pass.
 
 | Claim | State |
 |---|---|
-| SHAKTI bare metal and xv6, built from Urdu, Tamil and Hindi, booted on QEMU | verified |
-| xv6 and darknet from Urdu convert back to upstream byte for byte and print what the English build prints | verified |
-| A local project, its build system found by paras, ingested, built and run in Urdu, Tamil and Telugu | verified |
-| Any repository through `--report`: ingestion, reversal check, the words still to translate, an issue to file | verified on xv6 |
-| The rest of the stack (the SHAKTI SDK, firmware, QEMU, Linux, GCC, LLVM, llama.cpp, llm.c, PyTorch and others) | defined, not yet run |
+| A folder or repository ingested into Urdu, Tamil and Hindi, converting back exactly, published to a stand-in remote and verified | verified (tests) |
+| SHAKTI bare metal and xv6 from Urdu, Tamil and Hindi on QEMU; darknet from Urdu | verified (earlier runs) |
+| The whole stack published to GitHub | not yet run |
 
-The process behind it: [docs/PROCESS.md](docs/PROCESS.md). Hindawi itself: https://github.com/hindawiai/hindawi2026.10
-
-© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. Paras™, Parashakti™ and Hindawi™ are his trademarks.
-Docker is a trademark of Docker, Inc.; GitHub of GitHub, Inc. Their mention implies no endorsement.
+© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. MIT licence. Paras™, Parashakti™, Hindawi™ and BURP™ are his
+trademarks. Docker is a trademark of Docker, Inc.; GitHub of GitHub, Inc. Their mention implies no endorsement.

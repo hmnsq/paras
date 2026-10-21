@@ -1,0 +1,43 @@
+# Names and comments of the shaili samples, for BURP's dictionary. Drafted with an AI translator (Claude) as BURP's
+# translators are meant to be used, and recorded here so every ingestion is the same and reverses exactly.
+# Proposed words, unreviewed: corrections are welcome as issues. English and the word, separated by a tab.
+binary	ثنائي
+search	بحث
+values	قيم
+count	عدد
+key	مفتاح
+keys	مفاتيح
+low	أدنى
+high	عالي
+middle	وسط
+tree	شجرة
+node	عقدة
+left	يسار
+right	يمين
+root	جذر
+insert	أدرج
+inorder	بالترتيب
+print	اطبع
+stack	مكدس
+items	عناصر
+top	قمة
+push	ادفع
+value	قيمة
+pop	اسحب
+args	وسائط
+words	كلمات
+lines	أسطر
+input	مدخل
+line	سطر
+expr	تعبير
+num	رقم
+msg	رسالة
+number	رقم
+prime	أولي
+divisor	قاسم
+symbol	رمز
+binary search in a sorted array	بحث ثنائي، في مصفوفة مرتبة
+a binary search tree class, in c++	صنف شجرة بحث ثنائي، بلغة سي++
+binary search, in python	بحث ثنائي، بلغة بايثون
+a stack class, in java	صنف مكدس، بلغة جافا
+primes below 30, in basic	الأعداد الأولية الأصغر من ٣٠، بلغة بيسك

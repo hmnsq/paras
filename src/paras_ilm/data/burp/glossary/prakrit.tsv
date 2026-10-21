@@ -1,0 +1,41 @@
+# prakrit: names and comments for the language pages; proposed words, for review by its speakers (shared with sanskrit)
+binary	द्विमान
+search	अन्वेषणम्
+binary search	द्विमान अन्वेषणम्
+search tree	अन्वेषण वृक्षः
+tree node	वृक्ष ग्रन्थिः
+count	गणनम्
+divisor	भाजकः
+expr	व्यञ्जकम्
+high	उच्चः
+inorder	मध्यक्रमः
+input	निवेशः
+insert	निवेशय
+items	वस्तूनि
+key	कुञ्चिका
+keys	कुञ्चिकाः
+left	वामः
+line	पङ्क्तिः
+lines	पङ्क्तयः
+low	नीचः
+middle	मध्यः
+msg	सन्देशः
+node	ग्रन्थिः
+num	अङ्कः
+number	सङ्ख्या
+pop	निष्कासय
+prime	अविभाज्यः
+push	प्रक्षिप
+root	मूलम्
+stack	राशिः
+symbol	चिह्नम्
+top	शिखरम्
+tree	वृक्षः
+value	मानम्
+values	मानानि
+words	शब्दाः
+binary search in a sorted array	 क्रमबद्धायां सूच्यां द्विमान अन्वेषणम् 
+a binary search tree class, in C++	 द्विमान अन्वेषण वृक्षस्य वर्गः, सी++ भाषायाम् 
+a stack class, in Java	 राशेः वर्गः, जावा भाषायाम् 
+binary search, in Python	 द्विमान अन्वेषणम्, पाइथन भाषायाम् 
+right	दक्षिणः

@@ -1,0 +1,41 @@
+# tulu: names and comments for the language pages; proposed words, for review by its speakers (shared with kannada)
+binary	ದ್ವಿಮಾನ
+search	ಹುಡುಕು
+binary search	ದ್ವಿಮಾನ ಹುಡುಕು
+search tree	ಹುಡುಕು ವೃಕ್ಷ
+tree node	ವೃಕ್ಷ ಗಂಟು
+count	ಎಣಿಕೆ
+divisor	ಭಾಜಕ
+expr	ಅಭಿವ್ಯಕ್ತಿ
+high	ಮೇಲಿನ
+inorder	ಮಧ್ಯಕ್ರಮ
+input	ಒಳಹರಿವು
+insert	ಸೇರಿಸು
+items	ವಸ್ತುಗಳು
+key	ಕೀಲಿ
+keys	ಕೀಲಿಗಳು
+left	ಎಡ
+line	ಸಾಲು
+lines	ಸಾಲುಗಳು
+low	ಕೆಳಗಿನ
+middle	ಮಧ್ಯ
+msg	ಸಂದೇಶ
+node	ಗಂಟು
+num	ಅಂಕೆ
+number	ಸಂಖ್ಯೆ
+pop	ತೆಗೆ
+prime	ಅವಿಭಾಜ್ಯ
+push	ತಳ್ಳು
+root	ಬೇರು
+stack	ರಾಶಿ
+symbol	ಚಿಹ್ನೆ
+top	ತುದಿ
+tree	ವೃಕ್ಷ
+value	ಮೌಲ್ಯ
+values	ಮೌಲ್ಯಗಳು
+words	ಪದಗಳು
+binary search in a sorted array	 ವಿಂಗಡಿತ ಪಟ್ಟಿಯಲ್ಲಿ ದ್ವಿಮಾನ ಹುಡುಕಾಟ 
+a binary search tree class, in C++	 ದ್ವಿಮಾನ ಹುಡುಕಾಟ ವೃಕ್ಷದ ವರ್ಗ, ಸಿ++ ನಲ್ಲಿ 
+a stack class, in Java	 ರಾಶಿಯ ವರ್ಗ, ಜಾವಾದಲ್ಲಿ 
+binary search, in Python	 ದ್ವಿಮಾನ ಹುಡುಕಾಟ, ಪೈಥಾನ್ ನಲ್ಲಿ 
+right	ಬಲ

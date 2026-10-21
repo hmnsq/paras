@@ -1,0 +1,41 @@
+# pashto: names and comments for the language pages; proposed words, for review by its speakers
+binary	دوګونی
+search	پلټنه
+binary search	دوګونې پلټنه
+search tree	پلټنې ونه
+tree node	ونې غوټه
+count	شمېر
+divisor	وېشونکی
+expr	بیان
+high	لوړ
+inorder	منځنی ترتیب
+input	ننوت
+insert	ورننباسه
+items	توکي
+key	کلی
+keys	کلیګانې
+left	کیڼ
+line	کرښه
+lines	کرښې
+low	ټیټ
+middle	منځ
+msg	پیغام
+node	غوټه
+num	عدد
+number	شمېره
+pop	راوباسه
+prime	اولي
+push	ټېل
+root	ریښه
+stack	ډېری
+symbol	نښه
+top	سر
+tree	ونه
+value	ارزښت
+values	ارزښتونه
+words	ټکي
+binary search in a sorted array	 په ترتیب شوي لړ کې دوګونې پلټنه 
+a binary search tree class, in C++	 د دوګونې پلټنې ونې ټولګی، په سي++ کې 
+a stack class, in Java	 د ډېري ټولګی، په جاوا کې 
+binary search, in Python	 دوګونې پلټنه، په پایتون کې 
+right	ښی

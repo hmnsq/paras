@@ -1,0 +1,43 @@
+# Names and comments of the shaili samples, for BURP's dictionary. Drafted with an AI translator (Claude) as BURP's
+# translators are meant to be used, and recorded here so every ingestion is the same and reverses exactly.
+# Proposed words, unreviewed: corrections are welcome as issues. English and the word, separated by a tab.
+binary	दालावाहान
+search	हानाप
+values	मगा_हालागा
+count	बिलांग
+key	सुसि
+keys	मगा_सुसि
+low	माबाबा
+high	माताअस
+middle	गित्ना
+tree	पुनो
+node	बुहोल
+left	कालिवा
+right	कानान
+root	उगात
+insert	इसिंगित
+inorder	सुनुद_सुनोद
+print	इलिम्बाग
+stack	सालानसान
+items	मगा_बागाय
+top	इताअस
+push	इतुलाक
+value	हालागा
+pop	आलिसिन
+args	मगा_कातविरान
+words	मगा_सालिता
+lines	मगा_लिन्या
+input	पासोक
+line	लिन्या
+expr	पाहायाग
+num	नुमेरो
+msg	मेनसाहे
+number	नुमेरो
+prime	पांगुनाहिन
+divisor	पांगहाति
+symbol	सिम्बोलो
+binary search in a sorted array	दालावाहांग पागहाहानाप, सा नाकाआयोस ना हानाय
+a binary search tree class, in c++	क्लासे ना पुनो ना दालावाहांग पागहाहानाप, सा सी++
+binary search, in python	दालावाहांग पागहाहानाप, सा पाइथन
+a stack class, in java	क्लासे ना सालानसान, सा जावा
+primes below 30, in basic	मगा पांगुनाहिंग नुमेरो ना मास माबाबा सा ३०, सा बेसिक

@@ -1,0 +1,41 @@
+# kurdish_sorani: names and comments for the language pages; proposed words, for review by its speakers
+binary	دووانەیی
+search	گەڕان
+binary search	گەڕانی دووانەیی
+search tree	درەختی گەڕان
+tree node	گرێی درەخت
+count	ژماردن
+divisor	دابەشکەر
+expr	دەربڕین
+high	بەرز
+inorder	ڕیزبەندی ناوەند
+input	تێخستن
+insert	زیادکردن
+items	کاڵاکان
+key	کلیل
+keys	کلیلەکان
+left	چەپ
+line	هێڵ
+lines	هێڵەکان
+low	نزم
+middle	ناوەڕاست
+msg	پەیام
+node	گرێ
+num	ژمارە
+number	ژمار
+pop	دەرهێنان
+prime	سەرەتایی
+push	پاڵنان
+root	ڕەگ
+stack	کەڵەکە
+symbol	هێما
+top	لووتکە
+tree	درەخت
+value	بەها
+values	بەهاکان
+words	وشەکان
+binary search in a sorted array	 گەڕانی دووانەیی لە ڕیزێکی ڕێکخراودا 
+a binary search tree class, in C++	 پۆلی درەختی گەڕانی دووانەیی، بە سی++ 
+a stack class, in Java	 پۆلی کەڵەکە، بە جاڤا 
+binary search, in Python	 گەڕانی دووانەیی، بە پایتۆن 
+right	ڕاست

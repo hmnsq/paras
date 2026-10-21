@@ -1,0 +1,41 @@
+# manipuri_beng: names and comments for the language pages; proposed words, for review by its speakers (shared with bengali)
+binary	দ্বিমিক
+search	অনুসন্ধান
+binary search	দ্বিমিক অনুসন্ধান
+search tree	অনুসন্ধান বৃক্ষ
+tree node	বৃক্ষ গ্রন্থি
+count	গুনতি
+divisor	ভাজক
+expr	রাশিমালা
+high	উপরের
+inorder	মধ্যক্রম
+input	প্রবেশ
+insert	ঢোকাও
+items	বস্তুসমূহ
+key	চাবি
+keys	চাবিগুলি
+left	বাম
+line	সারি
+lines	সারিগুলি
+low	নিচের
+middle	মধ্য
+msg	বার্তা
+node	গ্রন্থি
+num	অঙ্ক
+number	সংখ্যা
+pop	বের করো
+prime	মৌলিক
+push	ঠেলো
+root	মূল
+stack	স্তূপ
+symbol	প্রতীক
+top	শীর্ষ
+tree	বৃক্ষ
+value	মান
+values	মানসমূহ
+words	শব্দগুলি
+binary search in a sorted array	 সাজানো তালিকায় দ্বিমিক অনুসন্ধান 
+a binary search tree class, in C++	 দ্বিমিক অনুসন্ধান বৃক্ষের শ্রেণি, সি++ এ 
+a stack class, in Java	 স্তূপের শ্রেণি, জাভায় 
+binary search, in Python	 দ্বিমিক অনুসন্ধান, পাইথনে 
+right	ডান
