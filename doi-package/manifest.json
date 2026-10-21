@@ -6,8 +6,8 @@
   "artifacts": [
     {
       "name": "paras-2026.10.0.tar.gz",
-      "size": 27620,
-      "sha256": "25ff26687d11b70b05308ec1ead303097c450ff66c0ac68087d42fa6eb2f6d8d"
+      "size": 60971,
+      "sha256": "dcbf3e83db0fb3b75ba12aa0a4990f4297b33e90b06cdfc045b61364c68fec23"
     },
     {
       "name": "CITATION.cff",
@@ -24,7 +24,7 @@
   ],
   "reproducibility": {
     "checksums": {
-      "paras-2026.10.0.tar.gz": "25ff26687d11b70b05308ec1ead303097c450ff66c0ac68087d42fa6eb2f6d8d",
+      "paras-2026.10.0.tar.gz": "dcbf3e83db0fb3b75ba12aa0a4990f4297b33e90b06cdfc045b61364c68fec23",
       "CITATION.cff": "713cad092331c384f850e66be7ff4021e5e4e6e6bba2ec7ee15b22bd4a14b54f"
     },
     "tool": "misty-doi"

@@ -8,7 +8,7 @@
 
 | File | Size | SHA-256 |
 | --- | ---: | --- |
-| `paras-2026.10.0.tar.gz` | 27620 | `25ff26687d11b70b05308ec1ead303097c450ff66c0ac68087d42fa6eb2f6d8d` |
+| `paras-2026.10.0.tar.gz` | 60971 | `dcbf3e83db0fb3b75ba12aa0a4990f4297b33e90b06cdfc045b61364c68fec23` |
 | `CITATION.cff` | 396 | `713cad092331c384f850e66be7ff4021e5e4e6e6bba2ec7ee15b22bd4a14b54f` |
 
 ## Metadata files
