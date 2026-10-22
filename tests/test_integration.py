@@ -34,6 +34,8 @@ def test_a_folder_is_ingested_and_converts_back(tmp_path):
     assert s["status"] == "ingested" and s["languages"] == 3 and s["exact"] == 3, s
     assert s["quality"]["urdu"]["names_pct"] > 50 and s["quality"]["urdu"]["round_trip"] == "exact"
     assert (work / "reports/demo/REPORT.md").exists() and (work / "reports/demo/GAPS.md").exists()
+    report = (work / "reports/demo/REPORT.md").read_text(encoding="utf-8")
+    assert "What each measure means" in report and "**Collision**" in report and "What to do next" in report
     assert json.loads((work / "progress.json").read_text())["phase"] == "finished"
     assert not (work / "paras.lock").exists() and not (work / "tmp").exists()
     assert any(json.loads(l).get("step") == "package" for l in (work / "events.jsonl").read_text().splitlines())

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paras-ilm"
-version = "2026.10.1"
+version = "2026.10.2"
 description = "Put any software into your language, and prove it still works: ingestion with BURP into every Hindawi language, one branch per language."
 readme = "README.md"
 license = "MIT"

@@ -34,7 +34,9 @@ def test_snapshot_shows_every_language_with_its_quality(tmp_path):
 
 def test_cli_help_version_list_and_refusals(tmp_path):
     assert "paras ingest" in paras("--help").stdout
-    assert paras("--version").stdout.strip().startswith("paras 2026.")
+    v = paras("--version").stdout
+    assert v.startswith("paras 2026.") and "© 1993–2026 Abhishek Choudhary. All rights reserved." in v and "MIT" in v and "trademark" in v
+    assert "All rights reserved" in paras("--help").stdout
     assert "seabios" in paras("list").stdout
     assert "I do not know" in paras("frobnicate", "--work", str(tmp_path)).stderr
     assert "needs a repository" in paras("ingest", "--work", str(tmp_path)).stderr

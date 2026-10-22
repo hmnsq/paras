@@ -4,7 +4,7 @@
 from silicon to distribution, in every language Hindawi supports.
 
 ```
-pipx install paras-ilm                 # or, without installing anything: git clone https://github.com/hmnsq/paras && cd paras && ./paras
+pipx install paras-ilm
 paras ingest https://github.com/OWNER/REPO
 paras top                              # watch it, in the manner of htop
 ```
@@ -34,6 +34,7 @@ nothing asks for sudo. Your GitHub login is handed into the container only when 
 | Claim | State |
 |---|---|
 | A folder or repository ingested into Urdu, Tamil and Hindi, converting back exactly, published to a stand-in remote and verified | verified (tests) |
+| xv6 ingested into all 76 languages, each converting back exactly | verified (AC's run, 21 Oct 2026) |
 | SHAKTI bare metal and xv6 from Urdu, Tamil and Hindi on QEMU; darknet from Urdu | verified (earlier runs) |
 | The whole stack published to GitHub | not yet run |
 

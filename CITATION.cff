@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use paras, please cite it as below."
 title: "paras: put any software into your language, and prove it still works"
-version: 2026.10.1
-date-released: 2026-10-21
+version: 2026.10.2
+date-released: 2026-10-22
 license: MIT
 authors:
   - family-names: Choudhary

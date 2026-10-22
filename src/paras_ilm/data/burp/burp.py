@@ -47,7 +47,11 @@ for exts, shaili, rev, style in [((".c", ".h"), "guru", ["c2h"], "c"),
 # the original Hindawi reverse transducers, used for Hindi wherever the legacy has them
 LEGACY_REV = {"asm2h": "yantra/y2h.uhin", "java2h": "kritrima/j2h.uhin", "c2h": "guru/c2h.uhin", "cpp2h": "shraeni/cpp2h.uhin", "b2h": "praatha/b2h.uhin",
               "py2h": "soochee/py2h.uhin", "yacc2h": "wyaaka/yacc2h.uhin", "l2h": "shabda/l2h.uhin"}
-BUILD_FILES = re.compile(r"^(GNUmakefile|[Mm]akefile.*|.*\.mk|CMakeLists\.txt|.*\.cmake|meson\.build)$")
+# build systems: make, automake, CMake, Meson, autoconf, Kconfig, SCons, Bazel, Ninja, qmake, GN and Android's; their -D and -U
+# names and, with --rename-files, the file names they mention are carried across, and back exactly
+BUILD_FILES = re.compile(r"^(GNUmakefile|[Mm]akefile.*|.*\.mk|CMakeLists\.txt|.*\.cmake|meson\.build|meson_options\.txt|meson\.options|"
+                         r"configure\.(ac|in)|Kconfig.*|SConstruct|SConscript|BUILD|BUILD\.bazel|WORKSPACE(\.bazel)?|.*\.bzl|.*\.ninja|"
+                         r".*\.pr[oi]|.*\.gni?|Android\.bp)$")
 ISO = {"hindi": "hi", "bengali": "bn", "urdu": "ur", "tamil": "ta", "telugu": "te", "marathi": "mr", "gujarati": "gu",
        "punjabi": "pa", "kannada": "kn", "malayalam": "ml", "nepali": "ne", "sanskrit": "sa", "odia": "or", "assamese": "as",
        "arabic": "ar", "persian": "fa", "farsi": "fa", "russian": "ru", "chinese": "zh", "japanese": "ja", "korean": "ko",
@@ -241,6 +245,10 @@ class Translator:
         return native if native and not native[0].isdigit() else ident
 
 
+LEXYACC = set("yylex yyparse yyerror yylval yytext yyleng yywrap yyin yyout yylineno YYSTYPE yychar yynerrs yydebug yyrestart "
+              "yy_scan_string yy_delete_buffer yy_create_buffer yy_switch_to_buffer YY_BUFFER_STATE yyterminate ECHO BEGIN REJECT yymore yyless unput".split())
+
+
 def _need_gcc():
     if not shutil.which("gcc") or not shutil.which("g++"):
         sys.exit("burp: gcc and g++ are needed to read the system headers' names (apt-get install gcc g++); nothing was ingested")
@@ -272,6 +280,14 @@ def externals(src, includes, defines):
         p = subprocess.run(["gcc", "-E", "-dM", "-x", "c++" if cpp else "c", "-"] + [f"-D{d}" for d in defines],
                            input="\n".join(system), capture_output=True, text=True, errors="replace")
         names["c++" if cpp else "c"].update(re.findall(r"^#define (\w+)", p.stdout, re.M))
+    # Lex and Yacc files carry C in their prologues: their system headers' names are external too
+    for f in sorted(p for p in Path(src).rglob("*") if p.suffix in (".y", ".l")):
+        inc = re.findall(r"^\s*#\s*include\s*<[^>]+>", f.read_text(encoding="utf-8", errors="replace"), re.M)
+        if inc:
+            pre = subprocess.run(["gcc", "-E", "-x", "c", "-"], input="\n".join(inc), capture_output=True, text=True, errors="replace")
+            names["c"].update(w for line in pre.stdout.splitlines() if not line.startswith("#") for w in re.findall(r"\b[A-Za-z_]\w*\b", line))
+            mac = subprocess.run(["gcc", "-E", "-dM", "-x", "c", "-"], input="\n".join(inc), capture_output=True, text=True, errors="replace")
+            names["c"].update(re.findall(r"^#define (\w+)", mac.stdout, re.M))
     names["c++"] |= names["c"]
     # A name the project declares itself (a function it defines, a member or variable it declares) is the project's own,
     # even where a system header happens to use the same word (insert, print, left, right): it is translated, unless the
@@ -288,11 +304,14 @@ def externals(src, includes, defines):
     own = declared - qualified - RESERVED
     for k in names:
         names[k] -= own
+    if any(p.suffix in (".y", ".l") for p in Path(src).rglob("*")):
+        for k in names:                    # the names lex and yacc's generated code calls: never translated, even where defined here
+            names[k] |= LEXYACC
     return names
 
 
 REFERENCE = {}      # the fullest keyword sets (Urdu's and Hindi's tables), to tell a keyword left in English from a name
-UNSUPPORTED = set(".rs .go .pl .pm .sh .bash .m4 .ac .am .cmake .hs .lhs .adb .ads .f .f90 .f95 .f03 .for .scm .ss .ts .tsx .js .mjs "
+UNSUPPORTED = set(".rs .go .pl .pm .sh .bash .m4 .hs .lhs .adb .ads .f .f90 .f95 .f03 .for .scm .ss .ts .tsx .js .mjs "
                   ".lua .tcl .el .kt .swift .zig .nim .d .cs .rb .php .v .sv .svh .bsv .bs .ml .mli .jl .scala .clj .ex .exs .erl .dart .m .mm".split())
 
 
@@ -540,8 +559,33 @@ def languages(spec):
     return have if spec == "all" else [l for l in spec.split(",") if l in have or l == "hindi"]
 
 
+def one_source(args):
+    """A single file is ingested as a project of one file; a path that does not exist, or a project with no files, is an error."""
+    src = Path(args.src)
+    if not src.exists():
+        sys.exit(f"burp: {src} does not exist")
+    if src.is_file():
+        import tempfile
+        d = Path(tempfile.mkdtemp(prefix="burp-file-"))
+        shutil.copy2(src, d / src.name)
+        args.src = str(d)
+        return d
+    if not any(p.is_file() and ".git" not in p.relative_to(src).parts for p in src.rglob("*")):
+        sys.exit(f"burp: {src} holds no files to ingest")
+    return None
+
+
 def cmd_ingest(args):
     langs = languages(args.langs)
+    single = one_source(args)
+    try:
+        return _ingest(args, langs)
+    finally:
+        if single:
+            shutil.rmtree(single, ignore_errors=True)
+
+
+def _ingest(args, langs):
     ext = externals(args.src, args.I, args.D)
     from concurrent.futures import as_completed
     rows, failed = [], []
@@ -597,9 +641,18 @@ def write_gaps(out, rows):
 
 
 def cmd_check(args):
+    single = one_source(args)
+    try:
+        return _check(args)
+    finally:
+        if single:
+            shutil.rmtree(single, ignore_errors=True)
+
+
+def _check(args):
     import filecmp, tempfile
     args.out = args.out or tempfile.mkdtemp(prefix="burp-")
-    cmd_ingest(args)
+    _ingest(args, languages(args.langs))
     report = []
     for folder in sorted(Path(args.out).iterdir()):
         if not (folder / DICT_NAME).exists():

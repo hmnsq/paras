@@ -2,7 +2,7 @@
 © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. Licensed under the MIT licence (see LICENSE)."""
 import argparse, os, shutil, subprocess, sys
 from pathlib import Path
-from . import __version__, core, tui
+from . import __version__, NOTICE, core, tui
 
 PKG = Path(__file__).parent; DATA = PKG / "data"
 IMAGE, CONTAINER = f"paras-ilm:{__version__}", "paras-ilm"
@@ -103,12 +103,15 @@ def run_inside(work, args, publish_note, local):
 
 
 def main(argv=None):
+    import signal
+    if hasattr(signal, "SIGPIPE"):
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)      # piped into head or less, it ends quietly, as Unix tools do
     if argv is None:
         argv = sys.argv[1:]
     if not argv or argv[0] in ("-h", "--help", "help"):
-        print(HELP); return 0
-    if argv[0] == "--version":
-        print(f"paras {__version__}"); return 0
+        print(HELP); print(); print(NOTICE); return 0
+    if argv[0] in ("--version", "-V", "version"):
+        print(NOTICE); return 0
     ap = argparse.ArgumentParser(prog="paras", add_help=False)
     ap.add_argument("verb"); ap.add_argument("target", nargs="?")
     ap.add_argument("--langs", default="all"); ap.add_argument("--publish", nargs="?", const="hmnsq")

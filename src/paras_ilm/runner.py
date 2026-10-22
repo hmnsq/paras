@@ -191,22 +191,17 @@ class Run:
                   "burp_sha256": __import__("hashlib").sha256((DATA / "burp/burp.py").read_bytes()).hexdigest()[:16],
                   "quality": {k: v.to_dict() for k, v in quality.items()},
                   "unsupported": gaps.get("files_in_languages_burp_cannot_read", {}), "seconds": int(time.time() - t0)}
-        self.report(p, pin, quality, rep)
+        self.report(p, pin, quality, rep, out, gaps)
         if publish:
             result["status"] = self.publish_branches(p, up, scope, out, pin, done if self.allow_inexact else exact, rep)
         shutil.rmtree(self.tmp, ignore_errors=True)
         return result
 
-    def report(self, p, pin, quality, rep):
-        rows = "\n".join(f"| {q.lang} | {q.round_trip} | {q.names_pct:.1f}% | {q.comments_pct:.1f}% | {q.keywords_missing} | {q.collisions} | {q.score} |"
-                         for q in sorted(quality.values(), key=lambda q: q.lang))
-        (rep / "REPORT.md").write_text(
-            f"# {p.name}, in {len(quality)} languages\n\nUpstream {p.url} at `{pin}`; ingested `{p.scope}`; layer {p.layer}. Each language is on its own "
-            f"branch, `lang/<language>`: check one out and the code is in that language, the rest of the tree is the upstream's. A language is published "
-            f"only when it converts back to the original byte for byte.\n\n| Language | Round trip | Names translated | Comments translated | Keywords missing "
-            f"| Collisions | Score |\n|---|---|---|---|---|---|---|\n{rows}\n\nScore: the mean of names translated, comments translated, and the round trip (100 "
-            f"when exact). What is still missing is in GAPS.md.\n\nBuilt by paras with BURP, from the canonical Hindawi 2026.10 ({self.hindawi_rev}). "
-            f"© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI.\n", encoding="utf-8")
+    def report(self, p, pin, quality, rep, out, gaps):
+        """REPORT.md: what was done, what each measure means, and for every gap what to do about it and where."""
+        from . import report
+        (rep / "REPORT.md").write_text(report.render(p, pin, quality, out, gaps, f"the canonical Hindawi 2026.10 ({self.hindawi_rev}), with paras's BURP"),
+                                       encoding="utf-8")
 
     def publish_branches(self, p, up, scope, out, pin, langs, rep):
         if not langs:
